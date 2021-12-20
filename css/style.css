@@ -71,7 +71,7 @@ main {
     height: 60px;
 }
 .user-pic {
-    width: 10%;
+    width: 45px;
     border-radius: 50%;
     margin: 0 0.6em;
 }
@@ -80,9 +80,7 @@ main {
     font-size: 0.95em;
     margin-right: 0.6em;
 }
-.stati-wa { width: 8.3%; }
-.new-chat { width: 8.3%; }
-.options { width: 8%; }
+.nav-user { width: 8%; }
 
 .fa-circle-notch:before,
 .fa-comment-alt:before,
@@ -185,4 +183,66 @@ main {
 .list-contacts {
     min-height: 400px;
     overflow-y:scroll;
+}
+
+.contact-active-window {
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+.contact-active {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+.nav-contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-active {
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 0.6em;
+}
+
+.date-seen {
+    align-self: baseline;
+    padding-top: 0.6em;
+    color: #6B7376;
+}
+
+.fa-search.margin:before,
+.fa-paperclip.margin:before,
+.fa-ellipsis-v.margin:before {
+    margin-right: 0.6em;
+}
+
+.texts-area {
+    background-image: url(../img/mine.jpg);
+    width: calc(100% - 10px);
+    height: calc(95vh - 60px - 50px);
+}
+
+.new-texts-area {
+    background-color: #F3EEEA;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.write-a-message {
+    border-style: none;
+    outline: none;
+    padding-left: 1em;
+    width: 90%;
+    height: 34px;
 }

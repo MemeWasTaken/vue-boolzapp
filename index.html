@@ -26,9 +26,9 @@
                         <div class="user">
                             <img class="user-pic" src="img/avatar_io.jpg" alt="">
                             <h5 class="user-name">Nome Utente</h5>
-                            <a href="stati-wa"> <i class="fas fa-circle-notch"></i> </a>
-                            <a href="new-chat"> <i class="fas fa-comment-alt"></i> </a>
-                            <a href="options"> <i class="fas fa-ellipsis-v"></i> </a>
+                            <a href="nav-user"> <i class="fas fa-circle-notch"></i> </a>
+                            <a href="nav-user"> <i class="fas fa-comment-alt"></i> </a>
+                            <a href="nav-user"> <i class="fas fa-ellipsis-v"></i> </a>
                         </div>
 
                         <div class="reminder-banner">
@@ -61,8 +61,38 @@
                         </li>
                     </ul>
                 </aside>
-                <main>
 
+                <main>
+                    <div class="contact-active-window">
+                        <div class="contact-active">
+                            <img class="img-active" src="img/avatar_3.jpg" alt="">
+                            <div class="name-and-lastSeen">
+                                <h5> {{contacts[2].name}} </h5>
+                                <small class="date-seen"> Ultimo accesso alle {{ contacts[2].messages[2].date }}</small>
+                            </div>
+                        </div>
+
+                        <div class="nav-contact">
+                            <a href="nav-user"> <i class="fas fa-search margin"></i> </a>
+                            <a href="nav-user"> <i class="fas fa-paperclip margin"></i> </a>
+                            <a href="nav-user"> <i class="fas fa-ellipsis-v margin"></i> </a>
+                        </div>
+                    </div>
+                    <div class="texts-area">
+
+                    </div>
+                    <div class="new-texts-area">
+                        <i class="far fa-smile"></i>
+                        
+                        <input
+                        @keyup.enter="sendTxt"
+                        v-model="messageWrote"
+                        class="write-a-message"
+                        type="text"
+                        placeholder="Scrivi un messaggio">
+
+                        <i class="fas fa-microphone"></i>
+                    </div>
                 </main>
             </div>
         </div>
