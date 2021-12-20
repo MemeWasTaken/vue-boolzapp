@@ -48,8 +48,17 @@
                             </div>
                         </div>
                     </nav>
-                    <ul>
 
+                    <ul class="list-contacts">
+                        <!-- TEMPLATE Contacts -->
+                        <li v-for="(contact, index) in contacts" class="contact-list">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" class="contact-img" alt="">
+                            <div class="name-and-preview">
+                                <h5 class="name-contact" > {{ contact.name }} </h5>
+                                <small class="preview-msg"> last message </small>
+                            </div>
+                            <small class="date"> {{ contact.messages[0].date }} </small>
+                        </li>
                     </ul>
                 </aside>
                 <main>

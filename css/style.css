@@ -18,6 +18,12 @@ a:active {
     text-decoration: none;
     color: #B1B1B1;
 }
+ul {
+    list-style-type: none;
+}
+html {
+    overflow-y: hidden;
+}
 
 /* SECTION Background */
 .upper-bg {
@@ -47,10 +53,10 @@ a:active {
     width: 85%;
     height: 95vh;
 }
-aside { width: 25%; }
+aside { width: 35%; }
 main {
     border-left: 1px solid #D6D6D6;
-    width: 75%;
+    width: 65%;
 }
 
 /* SECTION aside */
@@ -65,7 +71,7 @@ main {
     height: 60px;
 }
 .user-pic {
-    width: 12.5%;
+    width: 10%;
     border-radius: 50%;
     margin: 0 0.6em;
 }
@@ -115,7 +121,7 @@ main {
     color: #4F7485;
 }
 
-
+/* Search Aside SECTION */
 .search-aside {
     background-color: #FAFAFA;
     display: flex;
@@ -133,16 +139,50 @@ main {
 .search-aside-contacts:focus-within {
     border: 1px solid #F5F5F5;
 }
-
 .search {
     background-color: #FFFFFF;
     border: none;
     padding-left: 0.8em;
 }
-
 .input-search {
     border-style: none;
     outline: none;
     padding-left: 0.8em;
     width: 100%;
+}
+
+
+.contact-list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+.contact-img {
+    width: 10%;
+    border-radius: 50%;
+    margin: 0 0.6em;
+}
+.name-and-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0.6em;
+    width: 52%;
+    height: 60px;
+}
+
+.preview-msg,
+.date {
+    color: #B6B9BB;
+}
+
+.date {
+    align-self: baseline;
+    padding-top: 0.6em;
+}
+
+.list-contacts {
+    min-height: 400px;
+    overflow-y:scroll;
 }
