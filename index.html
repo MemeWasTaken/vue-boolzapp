@@ -52,7 +52,7 @@
                     <div class="list-contacts-container">
                         <ul class="list-contacts">
                             <!-- TEMPLATE Contacts -->
-                            <li v-for="(contact, index) in contacts" class="contact-list">
+                            <li @click="changeContact(index)" v-for="(contact, index) in contacts" class="contact-list" :class="isActive(index)">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" class="contact-img" alt="">
                                 <div class="name-and-preview">
                                     <h5 class="name-contact" > {{ contact.name }} </h5>
@@ -66,11 +66,11 @@
 
                 <main>
                     <div class="contact-active-window">
-                        <div v-for="(contact, i) in contacts" class="contact-active">
-                            <img class="img-active" :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                        <div class="contact-active">
+                            <img class="img-active" :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                             <div class="name-and-lastSeen">
-                                <h5> {{ contact[1].name }} </h5>
-                                <!-- <small class="date-seen"> </small> -->
+                                <h5> {{contacts[counter].name}} </h5>
+                                <small class="date-seen"> Ultimo accesso alle {{ contacts[counter].messages[2].date }}</small>
                             </div>
                         </div>
 
@@ -81,9 +81,10 @@
                         </div>
                     </div>
                     <div class="texts-area">
-                        <div class="message">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maxime repudiandae quaerat veniam sapiente maiores, facilis deleniti.
-                          </div>
+                        <div v-for="(message, i) in contacts[0].messages" class="message">
+                            {{ contacts[counter].messages[i].text }}
+                        </div>
+                        
                     </div>
                     <div class="new-texts-area">
                         <i class="far fa-smile"></i>
