@@ -83,6 +83,7 @@
                     <div class="texts-area">
                         <div v-for="(message, i) in contacts[0].messages" class="message">
                             {{ contacts[counter].messages[i].text }}
+                            <small class="text-date"> {{ contacts[counter].messages[i].date }} </small>
                         </div>
                         
                     </div>

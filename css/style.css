@@ -237,7 +237,12 @@ main {
 }
 .message {
     background-color: #FFFFFF;
-    width: 60%;
+    position: relative;
+    border-radius: 10px;
+    width: 40%;
+    line-height: 1em;
+    padding: 1.5em;
+    height: auto;
     margin: 10px 0;
 }
 .message.sent {
@@ -265,4 +270,13 @@ main {
 .list-contacts-container {
     height: calc(100% - 60px - 65px - 42px);
     overflow-y: auto;
+}
+
+.text-date {
+    color: #B6B9BB;
+    font-size: 0.7em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 0.4em 0.2em 0;
 }
