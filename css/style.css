@@ -24,6 +24,9 @@ ul {
 html {
     overflow-y: hidden;
 }
+body {
+    min-width: 950px;
+}
 
 /* SECTION Background */
 .upper-bg {
@@ -51,7 +54,7 @@ html {
     display: flex;
     margin: auto;
     width: 85%;
-    height: 95vh;
+    height: 95%;
 }
 aside { width: 35%; }
 main {
@@ -181,8 +184,8 @@ main {
 }
 
 .list-contacts {
-    min-height: 400px;
-    overflow-y:scroll;
+    /* min-height: 400px; */
+    /* overflow-y:auto; */
 }
 
 .contact-active-window {
@@ -226,8 +229,20 @@ main {
 
 .texts-area {
     background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
     width: calc(100% - 10px);
-    height: calc(95vh - 60px - 50px);
+    height: calc(100% - 60px - 50px);
+}
+.message {
+    background-color: #FFFFFF;
+    width: 60%;
+    margin: 10px 0;
+}
+.message.sent {
+    background-color: #D5F9BA;
+    align-self: end;
 }
 
 .new-texts-area {
@@ -245,4 +260,9 @@ main {
     padding-left: 1em;
     width: 90%;
     height: 34px;
+}
+
+.list-contacts-container {
+    height: calc(100% - 60px - 65px - 42px);
+    overflow-y: auto;
 }

@@ -49,26 +49,28 @@
                         </div>
                     </nav>
 
-                    <ul class="list-contacts">
-                        <!-- TEMPLATE Contacts -->
-                        <li v-for="(contact, index) in contacts" class="contact-list">
-                            <img :src="`img/avatar${contact.avatar}.jpg`" class="contact-img" alt="">
-                            <div class="name-and-preview">
-                                <h5 class="name-contact" > {{ contact.name }} </h5>
-                                <small class="preview-msg"> last message </small>
-                            </div>
-                            <small class="date"> {{ contact.messages[0].date }} </small>
-                        </li>
-                    </ul>
+                    <div class="list-contacts-container">
+                        <ul class="list-contacts">
+                            <!-- TEMPLATE Contacts -->
+                            <li v-for="(contact, index) in contacts" class="contact-list">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" class="contact-img" alt="">
+                                <div class="name-and-preview">
+                                    <h5 class="name-contact" > {{ contact.name }} </h5>
+                                    <small class="preview-msg"> last message </small>
+                                </div>
+                                <small class="date"> {{ contact.messages[0].date }} </small>
+                            </li>
+                        </ul>
+                    </div>
                 </aside>
 
                 <main>
                     <div class="contact-active-window">
-                        <div class="contact-active">
-                            <img class="img-active" src="img/avatar_3.jpg" alt="">
+                        <div v-for="(contact, i) in contacts" class="contact-active">
+                            <img class="img-active" :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div class="name-and-lastSeen">
-                                <h5> {{contacts[2].name}} </h5>
-                                <small class="date-seen"> Ultimo accesso alle {{ contacts[2].messages[2].date }}</small>
+                                <h5> {{ contact[1].name }} </h5>
+                                <!-- <small class="date-seen"> </small> -->
                             </div>
                         </div>
 
@@ -79,17 +81,14 @@
                         </div>
                     </div>
                     <div class="texts-area">
-
+                        <div class="message">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maxime repudiandae quaerat veniam sapiente maiores, facilis deleniti.
+                          </div>
                     </div>
                     <div class="new-texts-area">
                         <i class="far fa-smile"></i>
                         
-                        <input
-                        @keyup.enter="sendTxt"
-                        v-model="messageWrote"
-                        class="write-a-message"
-                        type="text"
-                        placeholder="Scrivi un messaggio">
+                        <input class="write-a-message" type="text" placeholder="Scrivi un messaggio">
 
                         <i class="fas fa-microphone"></i>
                     </div>

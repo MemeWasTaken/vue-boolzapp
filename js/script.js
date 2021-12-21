@@ -91,17 +91,6 @@ const app = new Vue(
         messageWrote: '',
     },
     methods: {
-        sendTxt() {
-            if (this.messageWrote.trim().length > 0) {
-                this.contacts.messages.push(
-                {
-                    date: "10/01/2020 15:50:00",
-                    text: this.messageWrote,
-                    status: "sent",
-                });
-                this.messageWrote = '';
-              }
-            
-        }
+       
     },
 });
