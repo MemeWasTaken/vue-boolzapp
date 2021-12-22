@@ -183,11 +183,6 @@ main {
     padding-top: 0.6em;
 }
 
-.list-contacts {
-    /* min-height: 400px; */
-    /* overflow-y:auto; */
-}
-
 .contact-active-window {
     background-color: #EAEAEA;
     display: flex;
@@ -232,8 +227,10 @@ main {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    overflow-y: auto;
     width: calc(100% - 10px);
     height: calc(100% - 60px - 50px);
+    
 }
 .message.received {
     background-color: #FFFFFF;
@@ -275,8 +272,8 @@ main {
 }
 
 .list-contacts-container {
-    height: calc(100% - 60px - 65px - 42px);
     overflow-y: auto;
+    height: calc(100% - 60px - 65px - 42px);
 }
 
 .text-date {

@@ -3,6 +3,7 @@ const app = new Vue(
     el: '#containerVue',
     data: {
       counter: 0,
+      messageWrote: '',
       contacts: [
           {
             name: "Michele",
@@ -94,7 +95,6 @@ const app = new Vue(
             ],
           },
       ],
-        messageWrote: '',
     },
     created () {
       console.log(this.counter);
@@ -111,6 +111,24 @@ const app = new Vue(
           return '';
         }
       },
-    },
+      newMessage: function () {
+        // Dopo aver premuto enter il msg viene inserito in messages.text in modo tale da poteer poi essere pushato l'oggetto
+        
+        // console.log(this.messageWrote.trim().length);
+        // console.log(this.messageWrote);
+        // console.log(this.contacts[this.counter].messages);
+
+        if(this.messageWrote.trim().length > 0) {
+          this.contacts[this.counter].messages.push(
+            {
+              date: "10/01/2020 15:30:55",
+              text: this.messageWrote,
+              status: "sent",
+            }
+          )
+          this.messageWrote = '';
+        }
+      },
+    }
   });
   
