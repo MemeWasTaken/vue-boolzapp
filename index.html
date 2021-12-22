@@ -81,9 +81,9 @@
                         </div>
                     </div>
                     <div class="texts-area">
-                        <div v-for="(message, i) in contacts[0].messages" class="message">
-                            {{ contacts[counter].messages[i].text }}
-                            <small class="text-date"> {{ contacts[counter].messages[i].date }} </small>
+                        <div v-for="(message, i) in contacts[counter].messages" class="message" :class="(message.status == 'sent') ? 'sent' : 'received'">
+                            {{ message.text }}
+                            <small class="text-date"> {{ message.date }} </small>
                         </div>
                         
                     </div>
