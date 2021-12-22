@@ -127,6 +127,17 @@ const app = new Vue(
             }
           )
           this.messageWrote = '';
+          
+          setTimeout(() => {
+            this.contacts[this.counter].messages.push(
+              {
+                date: "10/01/2020 15:30:55",
+                text: 'Mimmo e i sette nani',
+                status: "received",
+              }
+            )
+          }, 1000);
+
         }
       },
     }
