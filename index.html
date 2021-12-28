@@ -44,15 +44,18 @@
                         <div class="search-aside">
                             <div class="search-aside-contacts">
                                 <button class="search"> <i class="far fa-search"></i> </button>
-                                <input class="input-search" type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input @keyup.enter="filterContacts"
+                                v-model="contactSearched"
+                                class="input-search" type="text" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                     </nav>
 
                     <div class="list-contacts-container">
                         <ul class="list-contacts">
+
                             <!-- TEMPLATE Contacts -->
-                            <li @click="changeContact(index)" v-for="(contact, index) in contacts" class="contact-list" :class="isActive(index)">
+                            <li @click="changeContact(index)" v-if="contact.visible == true" v-for="(contact, index) in contacts" class="contact-list" :class="isActive(index)">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" class="contact-img" alt="">
                                 <div class="name-and-preview">
                                     <h5 class="name-contact" > {{ contact.name }} </h5>

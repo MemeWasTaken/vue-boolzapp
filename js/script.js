@@ -4,6 +4,8 @@ const app = new Vue(
     data: {
       counter: 0,
       messageWrote: '',
+      contactSearched: '',
+      // newListSearched: [],
       contacts: [
           {
             name: "Michele",
@@ -140,6 +142,20 @@ const app = new Vue(
 
         }
       },
+      filterContacts: function () {
+        this.contacts.forEach((cnt) => {
+            if (cnt.name.toLowerCase().includes(this.contactSearched.toLowerCase())) {
+            cnt.visible = true
+            }
+            else {
+            cnt.visible = false
+            }
+          }
+      )},
     }
-  });
+});
+
+
+
+
   
