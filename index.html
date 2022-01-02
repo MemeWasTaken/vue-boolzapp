@@ -87,6 +87,13 @@
                         <div v-for="(message, i) in contacts[counter].messages" class="message" :class="(message.status == 'sent') ? 'sent' : 'received'">
                             {{ message.text }}
                             <small class="text-date"> {{ message.date }} </small>
+                            <div class="dropdown">
+                                <button @click="myFunction" class="dropbtn"><i class="far fa-chevron-down"></i></button>
+                                <div id="myDropdown" class="dropdown-content">
+                                  <a href="#home">Delete</a>
+                                  <a href="#about">Info</a>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
